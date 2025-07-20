@@ -46,11 +46,11 @@ export default function Header({ theme }) {
   return (
     <header
       id="home"
-      className={`h-screen max-h-[800px] flex justify-center items-center px-4 bg-gradient-to-b text-gray-900 ${
+      className={`h-screen min-h-[500px] flex justify-center items-center bg-gradient-to-b py-7 text-gray-900 ${
         theme === "light" ? "from-gray-100 to-white" : "from-gray-900 to-gray-800"
       }`}
     >
-      <div className="w-[70vw] flex flex-col sm:flex-row justify-between items-center">
+      <div className="w-[70vw]  flex flex-col sm:flex-row justify-between items-center">
         <motion.div
           className="relative order-1 sm:order-2 mb-6 sm:mb-0 py-3"
           initial={{ opacity: 0, x: 100 }}
@@ -59,11 +59,11 @@ export default function Header({ theme }) {
           transition={{ duration: 0.7 }}
         >
           <div className="relative rounded-full w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 overflow-hidden">
-            <img
-              src="/bbb.jpg"
-              alt={t('profileImageAlt')}
-              className="w-full h-full object-cover"
-            />
+        <img
+          src={`${process.env.PUBLIC_URL}/bbb.jpg`}
+          alt={t('profileImageAlt')}
+          className="w-full h-full object-cover"
+        />
           </div>
         </motion.div>
 
@@ -90,7 +90,7 @@ export default function Header({ theme }) {
 
           <div className="flex flex-col md:flex-row justify-center items-center mt-3">
             <a
-              href="/CV.pdf"
+                href={`${process.env.PUBLIC_URL}/CV.pdf`}
               download
               className={`px-8 py-3 border-2 rounded-full font-semibold transition duration-300 ${
                 theme === "light"
@@ -125,14 +125,6 @@ export default function Header({ theme }) {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 500 80" preserveAspectRatio="none" className="w-full h-16">
-          <path
-            d="M0,30 C150,80 350,0 500,30 L500,80 L0,80 Z"
-            fill={theme === "light" ? "#f3f4f6" : "#111827"}
-          ></path>
-        </svg>
-      </div>
     </header>
   );
 }

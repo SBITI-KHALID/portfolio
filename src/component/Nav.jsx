@@ -156,11 +156,12 @@ export default function Nav({theme, setTheme}) {
                 )}
               </button>
 
-              <a
-                href="/CV.pdf"
-                download
-                className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-full font-semibold transition"
-              >
+<a
+  href={`${process.env.PUBLIC_URL}/CV.pdf`}
+  download
+  className="px-6 py-2 bg-red-500 hover:bg-red-600 text-white rounded-full font-semibold transition"
+>
+
                 {t('downloadCV')}
               </a>
             </div>

@@ -98,11 +98,12 @@ export default function Experience({ theme }) {
                           theme === "light" ? "bg-red-50" : "bg-gray-800"
                         }`}
                       >
-                        <img
-                          src={exp.certificate}
-                          alt={`Certificate of ${exp.title}`}
-                          className="shadow-md w-full max-w-xl object-contain m-1"
-                        />
+                    <img
+                      src={`${process.env.PUBLIC_URL}${exp.certificate}`}
+                      alt={`Certificate of ${exp.title}`}
+                      className="shadow-md w-full max-w-xl object-contain m-1"
+                    />
+
                       </div>
                     </motion.div>
                   )}

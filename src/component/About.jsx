@@ -21,7 +21,7 @@ export default function About({ theme }) {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/bbb.jpg"
+            src={`${process.env.PUBLIC_URL}/bbb.jpg`}
             alt={t('aboutImageAlt')}
             className="w-full h-full object-cover"
           />
