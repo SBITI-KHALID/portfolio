@@ -83,79 +83,81 @@ export default function Projects({ theme }) {
           </div>
         ) : (
           <>
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-              {displayedRepos.map((repo, index) => (
-                <motion.div
-                  key={repo.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: false, amount: 0.3 }}
-                  className={`border border-red-200 rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 ${
-                    theme === "light" ? "bg-white" : "bg-gray-900"
-                  }`}
-                  style={{ direction: "ltr", textAlign: "left" }}  // هنا ثابت الاتجاه
-                >
-                  <h3
-                    className={`text-2xl font-semibold mb-3 text-red-600 truncate ${
-                      theme === "light" ? "text-red-600" : "text-red-400"
+            {/* حاوية خارجية تضيف هوامش جانبية */}
+            <div className="px-4 sm:px-6 lg:px-12 w-full">
+              <div className="grid gap-10 grid-cols-[repeat(auto-fit,minmax(280px,1fr))]">
+                {displayedRepos.map((repo, index) => (
+                  <motion.div
+                    key={repo.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className={`border border-red-200 rounded-xl shadow-lg p-6 flex flex-col justify-between hover:shadow-2xl hover:scale-[1.02] transition-transform duration-300 w-full ${
+                      theme === "light" ? "bg-white" : "bg-gray-900"
                     }`}
-                    title={repo.name}
+                    style={{ direction: "ltr", textAlign: "left" }}
                   >
-                    {repo.name}
-                  </h3>
-
-                  <p
-                    className={`text-gray-600 flex-grow mb-5 min-h-[4.5rem] ${
-                      theme === "light" ? "" : "text-white"
-                    }`}
-                  >
-                    {repo.description || t("noDescription")}
-                  </p>
-
-                  <div className="flex items-center text-sm text-gray-600 space-x-5 mb-6">
-                    {repo.language && (
-                      <span className="flex items-center gap-2 bg-red-100 text-red-600 px-3 py-1 rounded-full font-medium select-none">
-                        <FaCode />
-                        {repo.language}
-                      </span>
-                    )}
-
-                    <span className="flex items-center gap-2 bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full font-medium select-none">
-                      <FaStar />
-                      {repo.stargazers_count}
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-5">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center gap-2 text-red-500 hover:text-red-700 font-semibold transition ${
+                    <h3
+                      className={`text-2xl font-semibold mb-3 truncate ${
                         theme === "light" ? "text-red-600" : "text-red-400"
                       }`}
+                      title={repo.name}
                     >
-                      <FaGithub size={20} />
-                      GitHub
-                    </motion.a>
+                      {repo.name}
+                    </h3>
 
-                    {repo.homepage && (
+                    <p
+                      className={`text-gray-600 flex-grow mb-5 min-h-[4.5rem] ${
+                        theme === "light" ? "" : "text-white"
+                      }`}
+                    >
+                      {repo.description || t("noDescription")}
+                    </p>
+
+                    <div className="flex flex-wrap items-center text-sm text-gray-600 gap-3 mb-6">
+                      {repo.language && (
+                        <span className="flex items-center gap-2 bg-red-100 text-red-600 px-3 py-1 rounded-full font-medium select-none">
+                          <FaCode />
+                          {repo.language}
+                        </span>
+                      )}
+                      <span className="flex items-center gap-2 bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full font-medium select-none">
+                        <FaStar />
+                        {repo.stargazers_count}
+                      </span>
+                    </div>
+
+                    <div className="flex space-x-5">
                       <motion.a
                         whileHover={{ scale: 1.05 }}
-                        href={repo.homepage}
+                        href={repo.html_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-red-500 hover:text-red-700 font-semibold transition"
+                        className={`flex items-center gap-2 hover:text-red-700 font-semibold transition ${
+                          theme === "light" ? "text-red-600" : "text-red-400"
+                        }`}
                       >
-                        <FaExternalLinkAlt size={18} />
-                        {t("liveDemo")}
+                        <FaGithub size={20} />
+                        GitHub
                       </motion.a>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+
+                      {repo.homepage && (
+                        <motion.a
+                          whileHover={{ scale: 1.05 }}
+                          href={repo.homepage}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-red-500 hover:text-red-700 font-semibold transition"
+                        >
+                          <FaExternalLinkAlt size={18} />
+                          {t("liveDemo")}
+                        </motion.a>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             {repos.length > 3 && (
