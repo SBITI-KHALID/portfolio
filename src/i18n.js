@@ -68,8 +68,9 @@ const resources = {
       enterName: 'Please enter your name',
       enterEmail: 'Please enter an email address',
       validEmail: 'There is an error in the email format',
-      enterMessage: 'Please fill in the field'
-
+      enterMessage: 'Please fill in the field',
+      sentSuccess: "Your message was sent successfully",
+      sentError: "Sorry, an error occurred. Please try again"
     }
   },
   fr: {
@@ -138,7 +139,9 @@ const resources = {
       enterName:'Veuillez entrer votre nom',
       enterEmail:"Veuillez saisir une adresse e-mail",
       validEmail:"Il y a une erreur dans la structure de l'e-mail",
-      enterMessage:"Veuillez remplir le champ"
+      enterMessage:"Veuillez remplir le champ",
+      sentSuccess: "Votre message a été envoyé avec succès",
+      sentError: "Désolé, une erreur s'est produite. Veuillez réessayer"
     }
   },
   ar: {
@@ -207,7 +210,9 @@ const resources = {
       enterName:'المرجو ادخال اسمك',
       enterEmail:'المرجو ادخال بريد إلكتروني',
       validEmail:'هناك خطأ في بنية البريد الإلكتروني',
-      enterMessage:'المرجو ملأ الحقل'
+      enterMessage:'المرجو ملأ الحقل',
+      sentSuccess:"تم إرسال رسالتكم بنجاح",
+      sentError:"عذرا حدث خطأ المرجو المحاولة مرة أخرى"
     }
   }
 };
