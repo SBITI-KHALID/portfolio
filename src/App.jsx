@@ -51,7 +51,7 @@ function App() {
           onClick={scrollToTop}
           className={`fixed bottom-5 right-5 z-50 p-3 rounded-full shadow-lg transition-all duration-300
             ${theme === "dark"
-              ? "bg-gray-800 text-white hover:bg-gray-700"
+              ? "bg-red-400 text-white hover:bg-red-600"
               : "bg-red-500 text-white hover:bg-red-600"}`}
           aria-label="Scroll to top"
         >

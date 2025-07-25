@@ -1,0 +1,22 @@
+{
+  "short_name": "Portfolio",
+  "name": "خالد سبيطي - Portfolio",
+  "icons": [
+    {
+      "src": "icons8-portfolio-100.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons8-portfolio-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#dc2626",
+  "background_color": "#ffffff",
+  "lang": "en",
+  "dir": "ltr"
+}
